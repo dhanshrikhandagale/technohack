@@ -1,0 +1,44 @@
+package demo;
+
+import java.util.Scanner;
+
+public class QuizGame {
+	public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int score = 0;
+
+        String[] questions = {
+            "1. The capital of Maharashtra is__?",
+            "2. Software is defined as ___________?",
+            "3. What does SDLC stands for?",
+        };
+
+        String[] options = {
+            "A) Pune  B)  Mumbai  C) Nashik  D) Nagpur",
+            "A) set of programs, documentation & configuration of data  B) set of programs  C) documentation and configuration of data  D) None of the mentioned",
+            "A) System Design Life Cycle  B) Software Design Life Cycle  C) Software Development Life Cycle  D)  System Development Life cycle",
+        };
+
+        String[] correctAnswers = {"B", "A", "C"};
+
+        for (int i = 0; i < questions.length; i++) {
+            System.out.println(questions[i]);
+            System.out.println(options[i]);
+
+            System.out.print("Your answer: ");
+            String userAnswer = scanner.nextLine().toUpperCase();
+
+            if (userAnswer.equals(correctAnswers[i])) {
+                System.out.println("Correct!\n");
+                score++;
+            } else {
+                System.out.println("Incorrect. The correct answer is " + correctAnswers[i] + "\n");
+            }
+        }
+
+        System.out.println("Quiz complete!");
+        System.out.println("Your score: " + score + " out of " + questions.length);
+        System.out.println("Congratulations!!!");
+    }
+}
+
